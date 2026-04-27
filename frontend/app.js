@@ -2,7 +2,7 @@
 let token=""
 
 async function login(){
- const r=await fetch("http://localhost:8000/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({username:user.value,password:pass.value})})
+ const r=await fetch("https://dev-investigador.onrender.com/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({username:user.value,password:pass.value})})
  const d=await r.json()
  token=d.token
  login.style.display="none"
@@ -10,7 +10,7 @@ async function login(){
 }
 
 async function loadUsers(){
- const r=await fetch("http://localhost:8000/admin/users",{headers:{"Authorization":"Bearer "+token}})
+ const r=await fetch("https://dev-investigador.onrender.com/admin/users",{headers:{"Authorization":"Bearer "+token}})
  const d=await r.json()
  users.innerHTML=d.map(u=>`<li>${u[1]} - ${u[2]} buscas</li>`).join("")
  document.getElementById("u").innerText=d.length
