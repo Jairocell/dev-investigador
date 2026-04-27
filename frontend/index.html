@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dev Investigador</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.json">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-slate-900 text-white">
+
+<div class="flex">
+<div class="w-60 bg-slate-800 h-screen p-4">
+<h2 class="text-xl mb-6">Dev Investigador</h2>
+<button onclick="showDashboard()">Dashboard</button>
+<button onclick="showUsers()">Usuários</button>
+</div>
+
+<div class="flex-1 p-6">
+
+<div id="login">
+<input id="user" placeholder="admin" class="p-2 mb-2 bg-slate-700 rounded">
+<input id="pass" type="password" placeholder="admin123" class="p-2 mb-2 bg-slate-700 rounded">
+<button onclick="login()" class="bg-blue-600 p-2 rounded">Entrar</button>
+</div>
+
+<div id="dashboard" class="hidden">
+<h1 class="text-2xl mb-4">Dashboard</h1>
+<div class="grid grid-cols-3 gap-4">
+<div class="bg-slate-800 p-4 rounded">Usuários: <span id="u"></span></div>
+<div class="bg-slate-800 p-4 rounded">Buscas: <span id="s"></span></div>
+<div class="bg-slate-800 p-4 rounded">Favoritos: <span id="f"></span></div>
+</div>
+<canvas id="chart" class="mt-6"></canvas>
+</div>
+
+<div id="usersPage" class="hidden">
+<h1 class="text-2xl mb-4">Usuários</h1>
+<ul id="users"></ul>
+</div>
+
+</div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
